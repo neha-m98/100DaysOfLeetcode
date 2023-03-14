@@ -5,6 +5,9 @@ class Solution {
         ///2nd pointer at start+1
         //3rd pointer at last
         //now compare the 
+        
+        //tc-o(nlogn)+o(n)
+        //sc-o(1)
      int n=nums.length;
      int minDiff=Integer.MAX_VALUE;
      Arrays.sort(nums);
