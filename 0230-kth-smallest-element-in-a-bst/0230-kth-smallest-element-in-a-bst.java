@@ -13,27 +13,23 @@
  *     }
  * }
  */
-
-//inorder and then get the count
 class Solution {
-    private int index = 0, ans = 0;
-
     public int kthSmallest(TreeNode root, int k) {
-        inorder(root, k);
-        return ans;
-    }
-    
-    private void inorder(TreeNode root, int k) {
-        if (root == null) return;
-        
-        inorder(root.left, k);
-        
-        index++;
-        if (index == k) {
-            ans = root.val;
-            return;
+        int count=0;
+        Stack<TreeNode> stack=new Stack<>();
+        TreeNode curr=root;
+        while(curr!=null || !stack.isEmpty()){
+            while(curr!=null){
+                stack.push(curr);
+                curr=curr.left;
+            }
+            curr=stack.pop();
+            count++;
+            if(count==k){
+                return curr.val;
+            }
+            curr=curr.right;
         }
-        
-        inorder(root.right, k);
+        return -1;
     }
 }
