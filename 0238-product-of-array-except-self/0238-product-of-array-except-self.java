@@ -1,5 +1,8 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
+        //keep left and multiply the ones on the right
+        //keep right and multiply the ones with the left
+        //element at i-1*number to get the muplied value
         int left[]=new int[nums.length];
         int right[]=new int[nums.length];
         
